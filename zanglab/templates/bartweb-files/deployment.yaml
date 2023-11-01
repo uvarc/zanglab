@@ -21,7 +21,7 @@ spec:
           claimName: zanglab-bartweb-files-nfs-pvc # name of pvc
       containers:
       - name: zanglab-bartweb-files-container
-        image: uvarc/docker-index:{{ .Values.version.zanglabBartwebFiles }}
+        image: uvarc/docker-index:latest
         ports:
         - containerPort: 80
         volumeMounts:
