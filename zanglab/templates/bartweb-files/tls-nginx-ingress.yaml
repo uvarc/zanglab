@@ -1,0 +1,36 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   annotations:
+#     kubernetes.io/ingress.class: nginx
+#     nginx.ingress.kubernetes.io/rewrite-target: /
+# #     acme.cert-manager.io/http01-edit-in-place: "true"
+# #     cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+#   name: zanglab-bartweb-files-tls-nginx-ingress
+#   namespace: zanglab
+# spec:
+#   rules:
+#   - host: zanglab-bartweb-files.pods.uvarc.io
+#     http:
+#       paths:
+#       - pathType: Prefix
+#         path: "/"
+#         backend:
+#           service:
+#             name: zanglab-bartweb-files-service
+#             port:
+#               number: 8080
+#   - host: bartweb-files.uvadcos.io
+#     http:
+#       paths:
+#       - pathType: Prefix
+#         path: "/"
+#         backend:
+#           service:
+#             name: zanglab-bartweb-files-service
+#             port:
+#               number: 8080
+# #   tls:
+# #       - hosts:
+# #           - zanglab-bartweb-files.pods.uvarc.io
+# #         secretName: zanglab-bartweb-files-nginx-tls-ingress-secret

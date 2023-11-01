@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zanglab-bartweb-files-service
+  namespace: zanglab
+spec:
+  selector:
+    app: zanglab-bartweb-files
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80

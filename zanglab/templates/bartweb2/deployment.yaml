@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bartweb2
+  namespace: zanglab
+  labels:
+    app: bartweb2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bartweb2
+  template:
+    metadata:
+      labels:
+        app: bartweb2
+    spec:
+      volumes:
+      - name: bartweb-gpfs-volume
+        persistentVolumeClaim:
+          claimName: bartweb-gpfs-pvc
+      containers:
+      - name: bartweb2-container
+        image: ghcr.io/uvarc/bart-web:frontend-20230414h
+        ports:
+        - containerPort: 80
+        envFrom:
+        - secretRef: 
+            name: bartweb2-secret
+        volumeMounts:
+        - name: bartweb-gpfs-volume
+          mountPath: /BARTweb/usercase
+        resources:
+          requests:
+            memory: "2048Mi"
+            cpu: "2000m"
+          limits:
+            memory: "4096Mi"
+            cpu: "2000m"

@@ -1,0 +1,14 @@
+# apiVersion: cert-manager.io/v1
+# kind: Certificate
+# metadata:
+#   annotations:
+#     argocd.argoproj.io/sync-wave: "-1"
+#   name: zanglab-bartweb-files-nginx-selfsigned-certificate
+#   namespace: zanglab
+# spec:
+#   dnsNames:
+#     - zanglab-bartweb-files.pods.uvarc.io
+#   secretName: zanglab-bartweb-files-nginx-tls-ingress-secret
+#   issuerRef:
+#     name: letsencrypt-cluster-issuer
+#     kind: ClusterIssuer 
