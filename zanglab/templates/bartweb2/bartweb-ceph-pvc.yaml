@@ -12,22 +12,22 @@
 #       storage: 10Gi
 
 
-# ---
-# apiVersion: v1
-# kind: PersistentVolumeClaim
-# metadata:
-#   name: bartweb-ceph-pvc
-#   #namespace: zanglab
-# spec:
-#   accessModes:
-#     - ReadWriteMany
-#   resources:
-#     requests:
-#       # This doesn't really matter for a static PV
-#       storage: 1Gi
-#   volumeMode: Filesystem
-#   volumeName: bartweb-ceph-pv
-#   storageClassName: csi-cephfs-sc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: bartweb-ceph-pvc
+  #namespace: zanglab
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      # This doesn't really matter for a static PV
+      storage: 1Gi
+  volumeMode: Filesystem
+  volumeName: bartweb-ceph-pv
+  storageClassName: csi-cephfs-sc
 
 
 #PVC not needed here,, the PV creates it. 
