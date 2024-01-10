@@ -1,12 +1,30 @@
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: bartweb-ceph-pvc
+#   namespace: zanglab
+# spec:
+#   storageClassName: bartweb-ceph-sc
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 10Gi
+
+
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: bartweb-ceph-pvc
-  namespace: zanglab
+  #namespace: zanglab
 spec:
-  storageClassName: bartweb-ceph-sc
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 10Gi
+      # This doesn't really matter for a static PV
+      storage: 1Gi
+  volumeMode: Filesystem
+  volumeName: bartweb-ceph-pv
+  storageClassName: csi-cephfs-sc
