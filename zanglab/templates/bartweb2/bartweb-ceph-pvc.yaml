@@ -1,12 +1,12 @@
 # apiVersion: v1
 # kind: PersistentVolumeClaim
 # metadata:
-#   name: zanglab-bartweb-files-nfs-pvc
+#   name: bartweb-ceph-pvc
 #   namespace: zanglab
 # spec:
-#   storageClassName: zanglab-bartweb-files-sc
+#   storageClassName: bartweb-ceph-sc
 #   accessModes:
-#     - ReadOnlyMany  #must be the same as PersistentVolume
+#     - ReadWriteOnce
 #   resources:
 #     requests:
 #       storage: 10Gi

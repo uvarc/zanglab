@@ -16,9 +16,9 @@
 #         app: bartweb2
 #     spec:
 #       volumes:
-#       - name: bartweb-gpfs-volume
+#       - name: bartweb-ceph-volume
 #         persistentVolumeClaim:
-#           claimName: bartweb-gpfs-pvc
+#           claimName: bartweb-ceph-pvc
 #       containers:
 #       - name: bartweb2-container
 #         image: ghcr.io/uvarc/bart-web:frontend-20230414h
@@ -28,7 +28,7 @@
 #         - secretRef: 
 #             name: bartweb2-secret
 #         volumeMounts:
-#         - name: bartweb-gpfs-volume
+#         - name: bartweb-ceph-volume
 #           mountPath: /BARTweb/usercase
 #         resources:
 #           requests:
