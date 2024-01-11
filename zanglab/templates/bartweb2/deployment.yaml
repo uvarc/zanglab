@@ -18,7 +18,7 @@ spec:
       volumes:
       - name: bartweb-ceph-volume
         persistentVolumeClaim:
-          claimName: bartweb-ceph-pvc
+          claimName: bartweb-cephfs-static-test-pvc
       containers:
       - name: bartweb2-container
         image: ghcr.io/uvarc/bart-web:frontend-20230414h
