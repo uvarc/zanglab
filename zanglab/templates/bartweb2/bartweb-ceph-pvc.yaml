@@ -17,7 +17,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: bartweb-ceph-pvc
-  #namespace: zanglab
+  namespace: zanglab
 spec:
   accessModes:
     - ReadWriteMany
