@@ -26,7 +26,8 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: zanglab-bartweb-files-nfs-volume
-          mountPath: /usr/share/nginx/
+          #mountPath: /usr/share/nginx/
+          mountPath: /BARTweb/usercase
         resources:
           requests:
             memory: "256Mi"
