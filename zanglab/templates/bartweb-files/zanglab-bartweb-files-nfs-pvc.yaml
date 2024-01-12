@@ -16,7 +16,7 @@
 # kind: PersistentVolumeClaim
 # metadata:
 #   name: zanglab-bartweb-files-nfs-pvc
-#   #namespace: zanglab
+#   namespace: zanglab
 # spec:
 #   accessModes:
 #     - ReadWriteMany

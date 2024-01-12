@@ -1,36 +1,36 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: zanglab-bartweb-files-deployment
-#   namespace: zanglab
-#   labels:
-#     app: zanglab-bartweb-files
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: zanglab-bartweb-files
-#   template:
-#     metadata:
-#       labels:
-#         app: zanglab-bartweb-files
-#     spec:
-#       volumes:
-#       - name: zanglab-bartweb-files-nfs-volume
-#         persistentVolumeClaim:
-#           claimName: zanglab-bartweb-files-nfs-pvc # name of pvc
-#       containers:
-#       - name: zanglab-bartweb-files-container
-#         image: uvarc/docker-index:latest
-#         ports:
-#         - containerPort: 80
-#         volumeMounts:
-#         - name: zanglab-bartweb-files-nfs-volume
-#           mountPath: /usr/share/nginx/html
-#         resources:
-#           requests:
-#             memory: "256Mi"
-#             cpu: "250m"
-#           limits:
-#             memory: "512Mi"
-#             cpu: "500m"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zanglab-bartweb-files-deployment
+  namespace: zanglab
+  labels:
+    app: zanglab-bartweb-files
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zanglab-bartweb-files
+  template:
+    metadata:
+      labels:
+        app: zanglab-bartweb-files
+    spec:
+      volumes:
+      - name: zanglab-bartweb-files-nfs-volume
+        persistentVolumeClaim:
+          claimName: zanglab-bartweb-files-nfs-pvc # name of pvc
+      containers:
+      - name: zanglab-bartweb-files-container
+        image: uvarc/docker-index:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: zanglab-bartweb-files-nfs-volume
+          mountPath: /usr/share/nginx/html
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
