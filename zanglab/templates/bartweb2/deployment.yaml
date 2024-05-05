@@ -21,7 +21,7 @@ spec:
           claimName: bartweb-ceph-pvc
       containers:
       - name: bartweb2-container
-        image: ghcr.io/uvarc/bart-web:frontend-20240501j
+        image: ghcr.io/uvarc/bart-web:frontend-20240504
         ports:
         - containerPort: 80
         envFrom:
